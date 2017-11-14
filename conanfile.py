@@ -11,6 +11,7 @@ class ConanSqlite3(ConanFile):
     year = "2017"
     sha1 = "ebe33c20d37a715db95288010c1009cd560f2452"
     license = "https://sqlite.org/copyright.html"
+    generators = "cmake"
     settings = "os", "compiler", "arch", "build_type"
     url = "http://github.com/bincrafters/conan-sqlite3"
     exports = ["CMakeLists.txt", "FindSQLite3.cmake"]
@@ -25,23 +26,19 @@ class ConanSqlite3(ConanFile):
         tools.get(download_url, sha1=self.sha1)
         
         os.rename(archive_name, "sources")
-        os.rename("CMakeLists.txt", os.path.join("sources", "CMakeLists.txt"))
 
     def build(self):
         cmake = CMake(self)
-        cmake.definitions["BUILD_TESTS"] = False
-        cmake.configure(source_dir="sources")
+        cmake.configure()
         cmake.build()
 
     def package(self):
         self.copy("FindSQLite3.cmake", ".", ".")
         self.copy("*.h", dst="include", src="sources")
-        self.copy(pattern="*.lib", dst="lib", src="Release", keep_path=False)
-        self.copy(pattern="*.lib", dst="lib", src="sources", keep_path=False)
-        self.copy(pattern="*.dll", dst="bin", src="sources", keep_path=False)
-        self.copy(pattern="*.a", dst="lib", src="sources", keep_path=False)
-        self.copy(pattern="*.lib", dst="lib", src="sources", keep_path=False)
-        self.copy(pattern="*.pdb", dst="lib", src="sources", keep_path=False)
+        self.copy(pattern="*.lib", dst="lib", keep_path=False)
+        self.copy(pattern="*.dll", dst="bin", keep_path=False)
+        self.copy(pattern="*.a", dst="lib", keep_path=False)
+        self.copy(pattern="*.pdb", dst="lib", keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = ['sqlite3']
