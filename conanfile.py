@@ -16,6 +16,8 @@ class ConanSqlite3(ConanFile):
     url = "http://github.com/bincrafters/conan-sqlite3"
     exports = ["CMakeLists.txt", "FindSQLite3.cmake"]
     description = "Self-contained, serverless, in-process SQL database engine."
+    options = {"shared": [True, False], "enable_json1": [True, False]}
+    default_options = "shared=False", "enable_json1=False"
     
     def source(self):
         base_url = "https://www.sqlite.org/" + self.year
@@ -29,7 +31,7 @@ class ConanSqlite3(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure()
+        cmake.configure(defs={"ENABLE_JSON1": self.options.enable_json1})
         cmake.build()
 
     def package(self):
