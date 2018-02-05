@@ -19,7 +19,10 @@ class ConanSqlite3(ConanFile):
     description = "Self-contained, serverless, in-process SQL database engine."
     options = {"shared": [True, False], "enable_json1": [True, False]}
     default_options = "shared=False", "enable_json1=False"
-    
+
+    def configure(self):
+        del self.settings.compiler.libcxx
+
     def source(self):
         base_url = "https://www.sqlite.org/" + self.year
         archive_name = "sqlite-amalgamation-" + self.version.replace(".","") + "000"
@@ -27,7 +30,6 @@ class ConanSqlite3(ConanFile):
         download_url = "{0}/{1}.{2}".format(base_url, archive_name, archive_ext)
         self.output.info("Attempting download of sources from: " + download_url)
         tools.get(download_url, sha1=self.sha1)
-        
         os.rename(archive_name, "sources")
 
     def build(self):
@@ -43,9 +45,11 @@ class ConanSqlite3(ConanFile):
         self.copy(pattern="*.dll", dst="bin", keep_path=False)
         self.copy(pattern="*.a", dst="lib", keep_path=False)
         self.copy(pattern="*.pdb", dst="lib", keep_path=False)
+        self.copy(pattern="*.so", dst="lib", keep_path=False)
+        self.copy(pattern="*.dylib", dst="lib", keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = ['sqlite3']
-        if not self.settings.os == "Windows":
+        if self.settings.os == "Linux":
             self.cpp_info.libs.append("pthread")
             self.cpp_info.libs.append("dl")
