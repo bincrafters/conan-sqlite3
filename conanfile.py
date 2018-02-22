@@ -10,13 +10,14 @@ class ConanSqlite3(ConanFile):
     version = "3.21.0"
     year = "2017"
     sha1 = "ebe33c20d37a715db95288010c1009cd560f2452"
+    description = "Self-contained, serverless, in-process SQL database engine."
+    url = "http://github.com/bincrafters/conan-sqlite3"
+    homepage = "https://www.sqlite.org"
     license = "Public Domain"
     generators = "cmake"
     settings = "os", "compiler", "arch", "build_type"
-    url = "http://github.com/bincrafters/conan-sqlite3"
     exports = ["LICENSE.md"]
     exports_sources = ["CMakeLists.txt", "FindSQLite3.cmake"]
-    description = "Self-contained, serverless, in-process SQL database engine."
     options = {"shared": [True, False], "enable_json1": [True, False]}
     default_options = "shared=False", "enable_json1=False"
 
