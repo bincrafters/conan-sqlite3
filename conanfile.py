@@ -18,11 +18,8 @@ class ConanSqlite3(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
     exports = ["LICENSE.md"]
     exports_sources = ["CMakeLists.txt", "FindSQLite3.cmake"]
-    options = {"shared": [True, False], "enable_json1": [True, False]}
-    default_options = "shared=False", "enable_json1=False"
-
-    def configure(self):
-        del self.settings.compiler.libcxx
+    options = {"shared": [True, False], "enable_json1": [True, False], "fPIC": [True, False]}
+    default_options = "shared=False", "enable_json1=False", "fPIC=True"
 
     def source(self):
         base_url = "https://www.sqlite.org/" + self.year
@@ -33,9 +30,18 @@ class ConanSqlite3(ConanFile):
         tools.get(download_url, sha1=self.sha1)
         os.rename(archive_name, "sources")
 
+    def config_options(self):
+        if self.settings.os == "Windows":
+            del self.options.fPIC
+
+    def configure(self):
+        del self.settings.compiler.libcxx
+
     def build(self):
         cmake = CMake(self)
         cmake.definitions["ENABLE_JSON1"] = self.options.enable_json1
+        if self.settings.os != "Windows":
+            cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
         cmake.configure()
         cmake.build()
 
