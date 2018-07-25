@@ -10,8 +10,10 @@ endif(MSVC AND BUILD_SHARED_LIBS)
 
 add_library(sqlite3 sources/sqlite3.c)
 
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND ${ANDROID} )
-    target_compile_definitions(sqlite3 PRIVATE -DBIONIC_IOCTL_NO_SIGNEDNESS_OVERLOAD)
+if (${ANDROID})
+    if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+        target_compile_definitions(sqlite3 PRIVATE -DBIONIC_IOCTL_NO_SIGNEDNESS_OVERLOAD)
+    endif()
 endif()
 
 # Add some options from https://sqlite.org/compile.html
