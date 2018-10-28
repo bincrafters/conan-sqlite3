@@ -28,6 +28,30 @@ This GIT repository is managed by the Bincrafters team and holds files related t
 
 [Bincrafters Blog](https://bincrafters.github.io)
 
+## Build and package
+
+The following command both runs all the steps of the conan file, and publishes the package to the local system cache.  This includes downloading dependencies from "build_requires" and "requires" , and then running the build() method.
+
+    $ conan create bincrafters/stable
+
+
+### Available Options
+See https://www.sqlite.org/compile.html for details.
+
+| Option        | Default | Possible Values  |
+| ------------- |:----------------- |:------------:|
+| shared      | False |  [True, False] |
+| fPIC      | True |  [True, False] |
+| threadsafe      | 1 |  [0, 1, 2] |
+| enable_column_metadata      | False |  [True, False] |
+| enable_explain_comments      | False |  [True, False] |
+| enable_fts3      | False |  [True, False] |
+| enable_fts4      | False |  [True, False] |
+| enable_fts5      | False |  [True, False] |
+| enable_json1      | False |  [True, False] |
+| enable_rtree      | False |  [True, False] |
+| omit_load_extension      | False |  [True, False] |
+
 ## License Information
 
 Bincrafters packages are hosted on [Bintray](https://bintray.com) and contain Open-Source software which is licensed by the software's maintainers and NOT Bincrafters.  For each Open-Source package published by Bincrafters, the packaging process obtains the required license files along with the original source files from the maintainer, and includes these license files in the generated Conan packages.  
