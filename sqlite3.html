@@ -1,0 +1,539 @@
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.selected {
+    border: 3px solid black;
+}
+</style>
+<script type="text/javascript">
+    function handleEvent(id) {
+        selected = document.getElementsByClassName('selected');
+        if (selected[0]) selected[0].className = '';
+        cell = document.getElementById(id);
+        cell.className = 'selected';
+        elem = document.getElementById('SelectedPackage');
+        elem.innerHTML = id;
+    }
+
+</script>
+<h1>sqlite3/3.21.0@bincrafters/stable</h1>
+    
+<table>
+<tr>
+<th></th>
+<th>Debug x86<br>fPIC=True<br>shared=False<br>enable_json1=False</th>
+<th>Debug x86<br>fPIC=True<br>shared=True<br>enable_json1=False</th>
+<th>Debug x86<br>shared=False<br>enable_json1=False</th>
+<th>Debug x86<br>shared=True<br>enable_json1=False</th>
+<th>Debug x86_64<br>fPIC=True<br>shared=False<br>enable_json1=False</th>
+<th>Debug x86_64<br>fPIC=True<br>shared=True<br>enable_json1=False</th>
+<th>Debug x86_64<br>shared=False<br>enable_json1=False</th>
+<th>Debug x86_64<br>shared=True<br>enable_json1=False</th>
+<th>Release x86<br>fPIC=True<br>shared=False<br>enable_json1=False</th>
+<th>Release x86<br>fPIC=True<br>shared=True<br>enable_json1=False</th>
+<th>Release x86<br>shared=False<br>enable_json1=False</th>
+<th>Release x86<br>shared=True<br>enable_json1=False</th>
+<th>Release x86_64<br>fPIC=True<br>shared=False<br>enable_json1=False</th>
+<th>Release x86_64<br>fPIC=True<br>shared=True<br>enable_json1=False</th>
+<th>Release x86_64<br>shared=False<br>enable_json1=False</th>
+<th>Release x86_64<br>shared=True<br>enable_json1=False</th>
+</tr>
+<tr>
+<td>Linux clang 3.9</td>
+<td bgcolor=#00ff00 id="399a04e04e0344bb4c3ae5c61a52829fb1b4601f" onclick=handleEvent("399a04e04e0344bb4c3ae5c61a52829fb1b4601f")></td>
+<td bgcolor=#00ff00 id="0b22fda5b01d7d4b36d17cfe1b73dfba70e51175" onclick=handleEvent("0b22fda5b01d7d4b36d17cfe1b73dfba70e51175")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="c22e293bc8dcd9fd87aa5b9d6b55569a0da47b27" onclick=handleEvent("c22e293bc8dcd9fd87aa5b9d6b55569a0da47b27")></td>
+<td bgcolor=#00ff00 id="c91a0fdce42675e6527525313cca24251b387ab8" onclick=handleEvent("c91a0fdce42675e6527525313cca24251b387ab8")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="ff9e4d69e4ab8e3f62f8b53cff6091d729a3bbf2" onclick=handleEvent("ff9e4d69e4ab8e3f62f8b53cff6091d729a3bbf2")></td>
+<td bgcolor=#00ff00 id="1f5cd7eec39b4551c481c46fa2751f861a743bb2" onclick=handleEvent("1f5cd7eec39b4551c481c46fa2751f861a743bb2")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="80caacb7fb2f820b84697db7dc971a4924654efe" onclick=handleEvent("80caacb7fb2f820b84697db7dc971a4924654efe")></td>
+<td bgcolor=#00ff00 id="b7ff1727dcd67e110bf1a7727e6ede5fbffa1d09" onclick=handleEvent("b7ff1727dcd67e110bf1a7727e6ede5fbffa1d09")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux clang 4.0</td>
+<td bgcolor=#00ff00 id="7b31aa4d56d8a5eaa307dca933ca6eb6be409432" onclick=handleEvent("7b31aa4d56d8a5eaa307dca933ca6eb6be409432")></td>
+<td bgcolor=#00ff00 id="a21f4e68cd516d295ca1cccc2f16fb77f9fab616" onclick=handleEvent("a21f4e68cd516d295ca1cccc2f16fb77f9fab616")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="fc6b6dcc8716ba823adf6647294247833510a7de" onclick=handleEvent("fc6b6dcc8716ba823adf6647294247833510a7de")></td>
+<td bgcolor=#00ff00 id="2144f833c251030c3cfd61c4354ae0e38607a909" onclick=handleEvent("2144f833c251030c3cfd61c4354ae0e38607a909")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="12992a5e14cc290396b2eb800a7c6fe9569de6d3" onclick=handleEvent("12992a5e14cc290396b2eb800a7c6fe9569de6d3")></td>
+<td bgcolor=#00ff00 id="4d27779130e34016d518a23d4b42587da0790f80" onclick=handleEvent("4d27779130e34016d518a23d4b42587da0790f80")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="a3c1782e6f0acdaccbc6b52d45f3ac8597be6c8a" onclick=handleEvent("a3c1782e6f0acdaccbc6b52d45f3ac8597be6c8a")></td>
+<td bgcolor=#00ff00 id="d5cf5f134638cc8b43df8417b471909f6ad7bc28" onclick=handleEvent("d5cf5f134638cc8b43df8417b471909f6ad7bc28")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux clang 5.0</td>
+<td bgcolor=#00ff00 id="2d98a73db0c18841878bb4da51e799d162c56017" onclick=handleEvent("2d98a73db0c18841878bb4da51e799d162c56017")></td>
+<td bgcolor=#00ff00 id="255d5042c6f937bd583eb96d2e95be0594c315a1" onclick=handleEvent("255d5042c6f937bd583eb96d2e95be0594c315a1")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="689541ef75e69f6ec6dadbae4187260d6a3f4cfb" onclick=handleEvent("689541ef75e69f6ec6dadbae4187260d6a3f4cfb")></td>
+<td bgcolor=#00ff00 id="1f814e0349557493ab220833bfd813d1e4cda1c8" onclick=handleEvent("1f814e0349557493ab220833bfd813d1e4cda1c8")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="83dba0d44de5df94ef51020e3074d358fcc3da47" onclick=handleEvent("83dba0d44de5df94ef51020e3074d358fcc3da47")></td>
+<td bgcolor=#00ff00 id="67eaaaba78f6663bc2b4fda5ff26dbb66c14580b" onclick=handleEvent("67eaaaba78f6663bc2b4fda5ff26dbb66c14580b")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="0bb6f9a537a76b4aa6af7fb4dbef0aa6dddcabf4" onclick=handleEvent("0bb6f9a537a76b4aa6af7fb4dbef0aa6dddcabf4")></td>
+<td bgcolor=#00ff00 id="f4cc52b86b26c856e5ad6ba03fdb66347f574ebd" onclick=handleEvent("f4cc52b86b26c856e5ad6ba03fdb66347f574ebd")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux gcc 4.9</td>
+<td bgcolor=#00ff00 id="02969c82539a0cdc9d449c3498c9a3b9b7f1bed7" onclick=handleEvent("02969c82539a0cdc9d449c3498c9a3b9b7f1bed7")></td>
+<td bgcolor=#00ff00 id="b5b867ca2ef13ffd448b2bd6c99538010a96b3c6" onclick=handleEvent("b5b867ca2ef13ffd448b2bd6c99538010a96b3c6")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="2345d377da94e8ffae1333469573b8215c98c514" onclick=handleEvent("2345d377da94e8ffae1333469573b8215c98c514")></td>
+<td bgcolor=#00ff00 id="4c1e28fd5a4bc95f5d58d65e681471e51dbc3d1a" onclick=handleEvent("4c1e28fd5a4bc95f5d58d65e681471e51dbc3d1a")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="fd3fb0dd62c642d683e28234ccbdd73dcdde36f0" onclick=handleEvent("fd3fb0dd62c642d683e28234ccbdd73dcdde36f0")></td>
+<td bgcolor=#00ff00 id="752be83d7bef4d9fb385440182ec884338865614" onclick=handleEvent("752be83d7bef4d9fb385440182ec884338865614")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="b869e6c05cb587ad588e5ec485deb62012ec7b93" onclick=handleEvent("b869e6c05cb587ad588e5ec485deb62012ec7b93")></td>
+<td bgcolor=#00ff00 id="b614d3b31d5e8feba6472fe56ecfe9a6fec1dbe7" onclick=handleEvent("b614d3b31d5e8feba6472fe56ecfe9a6fec1dbe7")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux gcc 5</td>
+<td bgcolor=#00ff00 id="b95bd79a0b8b393402aaa8ae114d6e639f6060c7" onclick=handleEvent("b95bd79a0b8b393402aaa8ae114d6e639f6060c7")></td>
+<td bgcolor=#00ff00 id="d26a890fe7c7ee3ac1546d4143036620012dbc73" onclick=handleEvent("d26a890fe7c7ee3ac1546d4143036620012dbc73")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="b1b85bfdc2206d81b3ed6a49e78498182bb98ef3" onclick=handleEvent("b1b85bfdc2206d81b3ed6a49e78498182bb98ef3")></td>
+<td bgcolor=#00ff00 id="37dbc353875958e967097ad32a2b5aa8894ae5fb" onclick=handleEvent("37dbc353875958e967097ad32a2b5aa8894ae5fb")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="e39f1bd53ada6a3fdbd8baddee4d51741b49df33" onclick=handleEvent("e39f1bd53ada6a3fdbd8baddee4d51741b49df33")></td>
+<td bgcolor=#00ff00 id="c33b4055fe2781b98f5ac7cb5b37c993177cc5be" onclick=handleEvent("c33b4055fe2781b98f5ac7cb5b37c993177cc5be")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="76f87539fc90ff313e0b3182641a9bb558a717d2" onclick=handleEvent("76f87539fc90ff313e0b3182641a9bb558a717d2")></td>
+<td bgcolor=#00ff00 id="e30939caa2339df448fcf9917da7b5ebc54646b6" onclick=handleEvent("e30939caa2339df448fcf9917da7b5ebc54646b6")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux gcc 6</td>
+<td bgcolor=#00ff00 id="a82bcd7f1f2b5a3686c7d28a57bc68ed901f3493" onclick=handleEvent("a82bcd7f1f2b5a3686c7d28a57bc68ed901f3493")></td>
+<td bgcolor=#00ff00 id="c97b86145d18e7f2823b0f13dd570c399deb0b69" onclick=handleEvent("c97b86145d18e7f2823b0f13dd570c399deb0b69")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="2f7b82355ea4bfc093a8e85003164e724ce5930c" onclick=handleEvent("2f7b82355ea4bfc093a8e85003164e724ce5930c")></td>
+<td bgcolor=#00ff00 id="355825791db03db61b0601e00dbc5294a8233dd5" onclick=handleEvent("355825791db03db61b0601e00dbc5294a8233dd5")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="920dfcba3d122dc23101db128649ffb81d98bdc4" onclick=handleEvent("920dfcba3d122dc23101db128649ffb81d98bdc4")></td>
+<td bgcolor=#00ff00 id="49350cd7d2d601da06d1f4e8a418dae3d7af6d5c" onclick=handleEvent("49350cd7d2d601da06d1f4e8a418dae3d7af6d5c")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="f7e573cb501ccfc49e9e4d84de886bc1ef2e6ebb" onclick=handleEvent("f7e573cb501ccfc49e9e4d84de886bc1ef2e6ebb")></td>
+<td bgcolor=#00ff00 id="8f12be23124aa342bd7ab463de96e82ca4a9e864" onclick=handleEvent("8f12be23124aa342bd7ab463de96e82ca4a9e864")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linux gcc 7</td>
+<td bgcolor=#00ff00 id="026c9e6cdb151f2cc1088e191db5611e3ae572a3" onclick=handleEvent("026c9e6cdb151f2cc1088e191db5611e3ae572a3")></td>
+<td bgcolor=#00ff00 id="fc0fd15a063e7b0ac7eb716736c82b350be80004" onclick=handleEvent("fc0fd15a063e7b0ac7eb716736c82b350be80004")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="db2ca884c9793e0b0fb54ec3f846326d1addacc8" onclick=handleEvent("db2ca884c9793e0b0fb54ec3f846326d1addacc8")></td>
+<td bgcolor=#00ff00 id="7d664d596b899d6a911940203e970ea000808ebc" onclick=handleEvent("7d664d596b899d6a911940203e970ea000808ebc")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="9608baf8e5eb8efeec952d1fb14e37d9acc25a65" onclick=handleEvent("9608baf8e5eb8efeec952d1fb14e37d9acc25a65")></td>
+<td bgcolor=#00ff00 id="b739c1951e2b3f24a80c0e54cb0b1685bf509d33" onclick=handleEvent("b739c1951e2b3f24a80c0e54cb0b1685bf509d33")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="d50a0d523d98c15bb147b18fa7d203887c38be8b" onclick=handleEvent("d50a0d523d98c15bb147b18fa7d203887c38be8b")></td>
+<td bgcolor=#00ff00 id="76480ff7af5ef6b0a1c8bc2444dbd480a5eaef8b" onclick=handleEvent("76480ff7af5ef6b0a1c8bc2444dbd480a5eaef8b")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Macos apple-clang 7.3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="c3aa93ae67e2bd3f39d7309e65bf1e9c9e2b7931" onclick=handleEvent("c3aa93ae67e2bd3f39d7309e65bf1e9c9e2b7931")></td>
+<td bgcolor=#00ff00 id="e8b5a3c7990c15bb9967110a8ecc58c7446afc27" onclick=handleEvent("e8b5a3c7990c15bb9967110a8ecc58c7446afc27")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="e1a8d4db69dc87303588a01d228f18e4edb71264" onclick=handleEvent("e1a8d4db69dc87303588a01d228f18e4edb71264")></td>
+<td bgcolor=#00ff00 id="d9bcd086a3755703e8d1d425bcc0b759e68d2f68" onclick=handleEvent("d9bcd086a3755703e8d1d425bcc0b759e68d2f68")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Macos apple-clang 8.1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="95eb44e3b12158e2d032ee9847c0b6fadfe6ffe8" onclick=handleEvent("95eb44e3b12158e2d032ee9847c0b6fadfe6ffe8")></td>
+<td bgcolor=#00ff00 id="21617cc4fb3c8f0579e6c48a73c6929e118b2c53" onclick=handleEvent("21617cc4fb3c8f0579e6c48a73c6929e118b2c53")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="efade599c316ff31894228eb2bb7df33ad97f49d" onclick=handleEvent("efade599c316ff31894228eb2bb7df33ad97f49d")></td>
+<td bgcolor=#00ff00 id="2eb37cafd83217ac3058d470de66db98bcde32fa" onclick=handleEvent("2eb37cafd83217ac3058d470de66db98bcde32fa")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Macos apple-clang 9.0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="2c17168af06928bb6890e9fbb80c6718c4c8cce2" onclick=handleEvent("2c17168af06928bb6890e9fbb80c6718c4c8cce2")></td>
+<td bgcolor=#00ff00 id="93f996c38f74c7a7575349f9a7790869f137c023" onclick=handleEvent("93f996c38f74c7a7575349f9a7790869f137c023")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="aa84d9aecf24e625da451318795116f31a55ba90" onclick=handleEvent("aa84d9aecf24e625da451318795116f31a55ba90")></td>
+<td bgcolor=#00ff00 id="f9c833125251629122f5d623a62cf122331caae7" onclick=handleEvent("f9c833125251629122f5d623a62cf122331caae7")></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 12 (MD)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="908a20ec6c6293206044e5b119cc87e0c3c491e8" onclick=handleEvent("908a20ec6c6293206044e5b119cc87e0c3c491e8")></td>
+<td bgcolor=#00ff00 id="960268f3098725d1de102ebd273986b9d4d3f610" onclick=handleEvent("960268f3098725d1de102ebd273986b9d4d3f610")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="e0a02d496bbb652b6295152dfce0d3937acc0b56" onclick=handleEvent("e0a02d496bbb652b6295152dfce0d3937acc0b56")></td>
+<td bgcolor=#00ff00 id="a4501f33ae09df332b76b4d6f0e5cebffbe83874" onclick=handleEvent("a4501f33ae09df332b76b4d6f0e5cebffbe83874")></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 12 (MDd)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="f9c716b78ebb169925e958b727bbe35baf7c9fac" onclick=handleEvent("f9c716b78ebb169925e958b727bbe35baf7c9fac")></td>
+<td bgcolor=#00ff00 id="fa7d82e9aef838f6e189f16d15b790c16a9a36cd" onclick=handleEvent("fa7d82e9aef838f6e189f16d15b790c16a9a36cd")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="88a8c94ba0d38ce69afccbcf0043e87eb56f222b" onclick=handleEvent("88a8c94ba0d38ce69afccbcf0043e87eb56f222b")></td>
+<td bgcolor=#00ff00 id="2747b6e662e99c0588be0fd0e7c3870ec66aa8f9" onclick=handleEvent("2747b6e662e99c0588be0fd0e7c3870ec66aa8f9")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 12 (MT)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="15cf71dd0a958f4b330128b207351fcfd9ae304f" onclick=handleEvent("15cf71dd0a958f4b330128b207351fcfd9ae304f")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="3ca85915ce57a6607676849c47c2cee02c75209c" onclick=handleEvent("3ca85915ce57a6607676849c47c2cee02c75209c")></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 12 (MTd)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="8acc013b124da976880660b17a7d8021e2f49ff4" onclick=handleEvent("8acc013b124da976880660b17a7d8021e2f49ff4")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="79c72d5f5bd5d2ece9d7f2eb3fe2f71a38b94d25" onclick=handleEvent("79c72d5f5bd5d2ece9d7f2eb3fe2f71a38b94d25")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 14 (MD)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="1299b26cefc5e04411a3481abe1c8b63227e2896" onclick=handleEvent("1299b26cefc5e04411a3481abe1c8b63227e2896")></td>
+<td bgcolor=#00ff00 id="ca0c09cfa678fd91b04c82824988c42e9ac40ddf" onclick=handleEvent("ca0c09cfa678fd91b04c82824988c42e9ac40ddf")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="63da998e3642b50bee33f4449826b2d623661505" onclick=handleEvent("63da998e3642b50bee33f4449826b2d623661505")></td>
+<td bgcolor=#00ff00 id="c85f9b402dd4d46acdf074e1c63b768a41181d7a" onclick=handleEvent("c85f9b402dd4d46acdf074e1c63b768a41181d7a")></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 14 (MDd)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="a8aed829304fe5cc95659bc2d44fa1628511899a" onclick=handleEvent("a8aed829304fe5cc95659bc2d44fa1628511899a")></td>
+<td bgcolor=#00ff00 id="80166202f625101565fba7a537eb34961fbcaf89" onclick=handleEvent("80166202f625101565fba7a537eb34961fbcaf89")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="c32596dcd26b8c708dc3d19cb73738d2b48f12a8" onclick=handleEvent("c32596dcd26b8c708dc3d19cb73738d2b48f12a8")></td>
+<td bgcolor=#00ff00 id="c83d8b197f1a331ca3b55943846d427ad4f7f8e1" onclick=handleEvent("c83d8b197f1a331ca3b55943846d427ad4f7f8e1")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 14 (MT)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="79c71dbda360a634692376cd2ed5aafa18493952" onclick=handleEvent("79c71dbda360a634692376cd2ed5aafa18493952")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="df81ad20137149d7a51276fd3e24009b45e5964a" onclick=handleEvent("df81ad20137149d7a51276fd3e24009b45e5964a")></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 14 (MTd)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="d9719aa212abfb01ad27d8207d37440982a68e66" onclick=handleEvent("d9719aa212abfb01ad27d8207d37440982a68e66")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="f27dcd2d5e453cb01f9324a959461903ce8116a0" onclick=handleEvent("f27dcd2d5e453cb01f9324a959461903ce8116a0")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 15 (MD)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="2bb76c9adac7b8cd7c5e3b377ac9f06934aba606" onclick=handleEvent("2bb76c9adac7b8cd7c5e3b377ac9f06934aba606")></td>
+<td bgcolor=#00ff00 id="c97b9e1abccf18d0aefcbcdef01d2c4689917df6" onclick=handleEvent("c97b9e1abccf18d0aefcbcdef01d2c4689917df6")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="6cc50b139b9c3d27b3e9042d5f5372d327b3a9f7" onclick=handleEvent("6cc50b139b9c3d27b3e9042d5f5372d327b3a9f7")></td>
+<td bgcolor=#00ff00 id="970e773c5651dc2560f86200a4ea56c23f568ff9" onclick=handleEvent("970e773c5651dc2560f86200a4ea56c23f568ff9")></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 15 (MDd)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="b786e9ece960c3a76378ca4d5b0d0e922f4cedc1" onclick=handleEvent("b786e9ece960c3a76378ca4d5b0d0e922f4cedc1")></td>
+<td bgcolor=#00ff00 id="2c3ed620f02d73526549b31cf660e3e1dc5cd3b1" onclick=handleEvent("2c3ed620f02d73526549b31cf660e3e1dc5cd3b1")></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="8cf01e2f50fcd6b63525e70584df0326550364e1" onclick=handleEvent("8cf01e2f50fcd6b63525e70584df0326550364e1")></td>
+<td bgcolor=#00ff00 id="ff82a1e70ba8430648a79986385b20a3648f8c19" onclick=handleEvent("ff82a1e70ba8430648a79986385b20a3648f8c19")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 15 (MT)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="c0e9c564ed574ab16d81fcdb2696580d62f12a3b" onclick=handleEvent("c0e9c564ed574ab16d81fcdb2696580d62f12a3b")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="7bd6f2c3d5c4e48a75805376b58cde753392f711" onclick=handleEvent("7bd6f2c3d5c4e48a75805376b58cde753392f711")></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows Visual Studio 15 (MTd)</td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="2a0b7ed68eb56c5f3ad8a5651d2edee732783124" onclick=handleEvent("2a0b7ed68eb56c5f3ad8a5651d2edee732783124")></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="963bb116781855de98dbb23aaac41621e5d312d8" onclick=handleEvent("963bb116781855de98dbb23aaac41621e5d312d8")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows gcc 4.9 (seh) (posix)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="ff0b79bd9b0fc1d915200da2fe02ae326cef4b1b" onclick=handleEvent("ff0b79bd9b0fc1d915200da2fe02ae326cef4b1b")></td>
+<td bgcolor=#00ff00 id="436fda1c8e107ab81c8d8177fa96e2b16d4d06f6" onclick=handleEvent("436fda1c8e107ab81c8d8177fa96e2b16d4d06f6")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="4c5ce8f5831645a5ff5cec3a4080e725907e91c9" onclick=handleEvent("4c5ce8f5831645a5ff5cec3a4080e725907e91c9")></td>
+<td bgcolor=#00ff00 id="a125fd3185659d4b7baf056fdcf10cca690f5491" onclick=handleEvent("a125fd3185659d4b7baf056fdcf10cca690f5491")></td>
+</tr>
+<tr>
+<td>Windows gcc 5 (seh) (posix)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="014be746b283391f79d11e4e8af3154344b58223" onclick=handleEvent("014be746b283391f79d11e4e8af3154344b58223")></td>
+<td bgcolor=#00ff00 id="f1f1ae4f67b393dfbd2bb774fa18f6232b820283" onclick=handleEvent("f1f1ae4f67b393dfbd2bb774fa18f6232b820283")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="81dbb5375a5d286d2200e965169cf19de21d6af5" onclick=handleEvent("81dbb5375a5d286d2200e965169cf19de21d6af5")></td>
+<td bgcolor=#00ff00 id="8070b35f539f5318d470a276d7bb0f9f07ff0d40" onclick=handleEvent("8070b35f539f5318d470a276d7bb0f9f07ff0d40")></td>
+</tr>
+<tr>
+<td>Windows gcc 6 (seh) (posix)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="1c0ed37a2e3d6a3b4876365593f5ec45bee5adbc" onclick=handleEvent("1c0ed37a2e3d6a3b4876365593f5ec45bee5adbc")></td>
+<td bgcolor=#00ff00 id="24ad3d8a1f3509f4942fc1f670ba594aae23faca" onclick=handleEvent("24ad3d8a1f3509f4942fc1f670ba594aae23faca")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="f7e97489c952a77cfb980500ef015ac2a294b903" onclick=handleEvent("f7e97489c952a77cfb980500ef015ac2a294b903")></td>
+<td bgcolor=#00ff00 id="f82a8f7ab675cec593ac94689330a88c378b5f62" onclick=handleEvent("f82a8f7ab675cec593ac94689330a88c378b5f62")></td>
+</tr>
+<tr>
+<td>Windows gcc 7 (seh) (posix)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="e7a7b3fc6b608eda453b7474d0fc3099804cf554" onclick=handleEvent("e7a7b3fc6b608eda453b7474d0fc3099804cf554")></td>
+<td bgcolor=#00ff00 id="262eea3067277eb59196adf2cb136cfb2d308857" onclick=handleEvent("262eea3067277eb59196adf2cb136cfb2d308857")></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td bgcolor=#00ff00 id="6dc82da13f94df549e60f9c1ce4c5d11285a4dff" onclick=handleEvent("6dc82da13f94df549e60f9c1ce4c5d11285a4dff")></td>
+<td bgcolor=#00ff00 id="8796a7e7c2d7bdba7ad775181d8b543980e7b18c" onclick=handleEvent("8796a7e7c2d7bdba7ad775181d8b543980e7b18c")></td>
+</tr>
+</table>
+<br>Selected: <div id="SelectedPackage"></div>
+<br>Legend<br><table><tr><td bgcolor=#ffff00>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Outdated from recipe</td></tr><tr><td bgcolor=#00ff00>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Updated</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>Non existing</td></tr></table>
