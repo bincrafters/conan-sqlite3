@@ -1,17 +1,44 @@
 
-message(STATUS "${CONAN_LIB_DIRS_SQLITE3}")
-
 find_path(SQLITE3_INCLUDE_DIR NAMES sqlite3.h PATHS ${CONAN_INCLUDE_DIRS_SQLITE3})
 find_library(SQLITE3_LIBRARY NAMES ${CONAN_LIBS_SQLITE3} PATHS ${CONAN_LIB_DIRS_SQLITE3})
 
 IF(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-   SET(EXTRA_LIBS dl pthread)
+   set(EXTRA_LIBS dl pthread)
 ENDIF()
 
 set(SQLITE3_INCLUDE_DIRS ${SQLITE3_INCLUDE_DIR})
 set(SQLITE3_LIBRARIES ${SQLITE3_LIBRARY} ${EXTRA_LIBS})
+set(SQLITE3_LIBRARIES_TARGETS "")
 
 mark_as_advanced(SQLITE3_LIBRARY SQLITE3_INCLUDE_DIR)
+
+foreach(_LIBRARY_NAME ${SQLITE3_LIBRARIES})
+    unset(CONAN_FOUND_LIBRARY CACHE)
+    find_library(CONAN_FOUND_LIBRARY NAME ${_LIBRARY_NAME} PATHS ${CONAN_LIB_DIRS_SQLITE3} NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
+    if(CONAN_FOUND_LIBRARY)
+        if(NOT ${CMAKE_VERSION} VERSION_LESS "3.0")
+            if(NOT TARGET ${_LIB_NAME})
+                add_library(${_LIB_NAME} UNKNOWN IMPORTED)
+                set_target_properties(${_LIB_NAME} PROPERTIES IMPORTED_LOCATION ${CONAN_FOUND_LIBRARY})
+                list(APPEND SQLITE3_LIBRARIES_TARGETS ${_LIB_NAME})
+            endif()
+        endif()
+    else()
+        list(APPEND SQLITE3_LIBRARIES_TARGETS ${_LIBRARY_NAME})
+    endif()
+endforeach()
+
+if(NOT ${CMAKE_VERSION} VERSION_LESS "3.0")
+   if(NOT TARGET sqlite3::sqlite3)
+      add_library(sqlite3::sqlite3 INTERFACE IMPORTED)
+      if(SQLITE3_INCLUDE_DIR)
+         set_target_properties(sqlite3::sqlite3 PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${SQLITE3_INCLUDE_DIR}")
+      endif()
+      set_property(TARGET sqlite3::sqlite3 PROPERTY INTERFACE_LINK_LIBRARIES ${SQLITE3_LIBRARIES_TARGETS} "" "")
+      set_property(TARGET sqlite3::sqlite3 PROPERTY INTERFACE_COMPILE_DEFINITIONS )
+      set_property(TARGET sqlite3::sqlite3 PROPERTY INTERFACE_COMPILE_OPTIONS "" "")
+    endif()
+endif()
 
 message("** SQLite3 found by Conan!")
 set(SQLITE3_FOUND TRUE)
