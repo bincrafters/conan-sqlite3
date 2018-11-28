@@ -79,7 +79,7 @@ class ConanSqlite3(ConanFile):
         if self.settings.os == "Windows":
             cmake.definitions["HAVE_LOCALTIME_R"] = False
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
-        if self.settings.os == "Macos":
+        if tools.is_apple_os(self.settings.os):
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
         if self.settings.os != "Windows":
             cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
