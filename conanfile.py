@@ -45,7 +45,7 @@ class ConanSqlite3(ConanFile):
     _source_subfolder = "source_subfolder"
 
     def source(self):
-        sha256 = "2ad5379f3b665b60599492cc8a13ac480ea6d819f91b1ef32ed0e1ad152fafef"
+        sha256 = "de5dcab133aa339a4cf9e97c40aa6062570086d6085d8f9ad7bc6ddf8a52096e"
         download_url = "{}/2018".format(self.homepage)
         major, minor, patch = self.version.split(".")
         archive_name = "sqlite-amalgamation-" + major + minor.rjust(2, "0") + patch.rjust(2, "0") + "00"
