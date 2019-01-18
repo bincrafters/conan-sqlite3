@@ -23,4 +23,5 @@ class TestPackageConan(ConanFile):
                 if not tools.cross_building(self.settings):
                     self.run("DYLD_LIBRARY_PATH=%s %s" % (os.environ.get('DYLD_LIBRARY_PATH', ''), bin_path))
             else:
-                self.run("LD_LIBRARY_PATH=%s %s" % (os.environ.get('LD_LIBRARY_PATH', ''), bin_path))
+                if not tools.cross_building(self.settings):
+                    self.run("LD_LIBRARY_PATH=%s %s" % (os.environ.get('LD_LIBRARY_PATH', ''), bin_path))
