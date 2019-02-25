@@ -7,7 +7,7 @@ from conans import ConanFile, CMake, tools
 
 class ConanSqlite3(ConanFile):
     name = "sqlite3"
-    version = "3.27.1"
+    version = "3.27.2"
     description = "Self-contained, serverless, in-process SQL database engine."
     url = "http://github.com/bincrafters/conan-sqlite3"
     homepage = "https://www.sqlite.org"
@@ -45,7 +45,7 @@ class ConanSqlite3(ConanFile):
     _source_subfolder = "source_subfolder"
 
     def source(self):
-        sha256 = "5ad7140465cc3171e0d026c8eb6546a7844ec67508299048cb89290d92962d73"
+        sha256 = "00fc566f1cece7f4264dc93a7151c64bb794e58c5d20ea65f46b9f7cb36bc34b"
         download_url = "{}/2019".format(self.homepage)
         major, minor, patch = self.version.split(".")
         archive_name = "sqlite-amalgamation-" + major + minor.rjust(2, "0") + patch.rjust(2, "0") + "00"
