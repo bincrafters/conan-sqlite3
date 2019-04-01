@@ -104,7 +104,7 @@ class ConanSqlite3(ConanFile):
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
         if self.settings.os == "Linux":
-            if self.options.threadsafe != "0":
+            if self.options.threadsafe:
                 self.cpp_info.libs.append("pthread")
             if self.options.omit_load_extension == "False":
                 self.cpp_info.libs.append("dl")
