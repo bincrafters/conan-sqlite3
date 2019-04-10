@@ -11,11 +11,18 @@ if __name__ == "__main__":
 
     # Add build combinations needed for conan-sqlitecpp
     builds = list(builder.items)
-    new_builds = copy.deepcopy(builds)
-    for build in new_builds:
+
+    new_builds_1 = copy.deepcopy(builds)
+    new_builds_2 = copy.deepcopy(builds)
+
+    for build in new_builds_1:
         build.options['sqlite3:threadsafe'] = 2
         build.options['sqlite3:enable_column_metadata'] = True
-    builder.items.extend(new_builds)
+    for build in new_builds_2:
+        build.options['sqlite3:threadsafe'] = 1
+        build.options['sqlite3:enable_column_metadata'] = True
+
+    builder.items.extend(new_builds_1)
+    builder.items.extend(new_builds_2)
 
     builder.run()
-    
