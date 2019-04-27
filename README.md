@@ -2,7 +2,7 @@
 
 | Bintray | Windows | Linux & macOS | 
 |:--------:|:---------:|:-----------------:|
-|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/sqlite3%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/sqlite3%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-sqlite3?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-sqlite3)|[![Build Status](https://travis-ci.org/bincrafters/conan-sqlite3.svg)](https://travis-ci.org/bincrafters/conan-sqlite3)|
+|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/sqlite3%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/sqlite3%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-sqlite3?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-sqlite3)|[![Build Status](https://travis-ci.com/bincrafters/conan-sqlite3.svg)](https://travis-ci.com/bincrafters/conan-sqlite3)|
 
 ## Conan.io Information
 

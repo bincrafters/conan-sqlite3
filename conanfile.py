@@ -81,8 +81,6 @@ class ConanSqlite3(ConanFile):
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
         if tools.is_apple_os(self.settings.os):
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
-        if self.settings.os != "Windows":
-            cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
         if self.settings.os == "Android":
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
         cmake.configure()
