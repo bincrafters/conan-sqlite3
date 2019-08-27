@@ -58,6 +58,7 @@ class ConanSqlite3(ConanFile):
 
     def configure(self):
         del self.settings.compiler.libcxx
+        del self.settings.compiler.cppstd
 
     def _configure_cmake(self):
         cmake = CMake(self)
