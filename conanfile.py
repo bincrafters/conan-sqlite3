@@ -1,23 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-from conans import ConanFile, CMake, tools
+from conans import CMake, tools
+from conanfile_base import ConanFileBase
 
 
-class ConanSqlite3(ConanFile):
-    name = "sqlite3"
-    version = "3.29.0"
-    description = "Self-contained, serverless, in-process SQL database engine."
-    url = "http://github.com/bincrafters/conan-sqlite3"
-    homepage = "https://www.sqlite.org"
-    author = "Bincrafters <bincrafters@gmail.com>"
-    topics = ("conan", "sqlite", "database", "sql", "serverless")
-    license = "Public Domain"
-    generators = "cmake"
+class ConanFileDefault(ConanFileBase):
+    name = ConanFileBase._base_name
+    version = ConanFileBase.version
     settings = "os", "compiler", "arch", "build_type"
-    exports = ["LICENSE.md"]
-    exports_sources = ["CMakeLists.txt", "FindSQLite3.cmake"]
+    exports_sources = ConanFileBase.exports_sources + ["FindSQLite3.cmake"]
     options = {"shared": [True, False],
                "fPIC": [True, False],
                "threadsafe": [0, 1, 2],
@@ -42,15 +34,6 @@ class ConanSqlite3(ConanFile):
                        "enable_rtree": False,
                        "omit_load_extension": False
                        }
-    _source_subfolder = "source_subfolder"
-
-    def source(self):
-        sha256 = "48253d8f1616f213422e4374cff39050488d2497812d9bbb8609524127d45732"
-        download_url = "{}/2019".format(self.homepage)
-        major, minor, patch = self.version.split(".")
-        archive_name = "sqlite-amalgamation-" + major + minor.rjust(2, "0") + patch.rjust(2, "0") + "00"
-        tools.get("{}/{}.zip".format(download_url, archive_name), sha256=sha256)
-        os.rename(archive_name, self._source_subfolder)
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -77,6 +60,7 @@ class ConanSqlite3(ConanFile):
         cmake.definitions["HAVE_POSIX_FALLOCATE"] = True
         cmake.definitions["HAVE_STRERROR_R"] = True
         cmake.definitions["HAVE_USLEEP"] = True
+        cmake.definitions["BUILD_SHELL"] = False
         if self.settings.os == "Windows":
             cmake.definitions["HAVE_LOCALTIME_R"] = False
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
@@ -87,20 +71,9 @@ class ConanSqlite3(ConanFile):
         cmake.configure()
         return cmake
 
-    def build(self):
-        cmake = self._configure_cmake()
-        cmake.build()
-
     def package(self):
-        header = tools.load(os.path.join(self._source_subfolder, "sqlite3.h"))
-        license_content = header[3:header.find("***", 1)]
-        tools.save("LICENSE", license_content)
-
-        self.copy("LICENSE", dst="licenses")
+        super(ConanFileDefault, self).package()
         self.copy("FindSQLite3.cmake")
-
-        cmake = self._configure_cmake()
-        cmake.install()
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
