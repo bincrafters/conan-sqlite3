@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 from conans import CMake, tools
 from conanfile_base import ConanFileBase
 
@@ -60,7 +61,7 @@ class ConanFileDefault(ConanFileBase):
         cmake.definitions["HAVE_POSIX_FALLOCATE"] = True
         cmake.definitions["HAVE_STRERROR_R"] = True
         cmake.definitions["HAVE_USLEEP"] = True
-        cmake.definitions["BUILD_SHELL"] = False
+        cmake.definitions["BUILD_SHELL"] = True
         if self.settings.os == "Windows":
             cmake.definitions["HAVE_LOCALTIME_R"] = False
             cmake.definitions["HAVE_POSIX_FALLOCATE"] = False
@@ -76,6 +77,10 @@ class ConanFileDefault(ConanFileBase):
         self.copy("FindSQLite3.cmake")
 
     def package_info(self):
+        bin_path = os.path.join(self.package_folder, "bin")
+        self.output.info('Appending PATH environment variable: %s' % bin_path)
+        self.env_info.PATH.append(bin_path)
+
         self.cpp_info.libs = tools.collect_libs(self)
         if self.settings.os == "Linux":
             if self.options.threadsafe:
